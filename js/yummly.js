@@ -1,9 +1,11 @@
 $( document ).ready(function() {
     $( ".col-md-3" ).hover(
   function() {
-    $(this).addClass( "hover" );
+    $(this).find("img").addClass( "hover" );
+    $(this).find(".center-block").css("visibility", "visible");
   }, function() {
-    $(this).removeClass( "hover" );
+    $(this).find("img").removeClass( "hover" );
+    $(this).find(".center-block").css("visibility", "hidden");
   }
 );
 });
