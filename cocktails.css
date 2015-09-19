@@ -1,0 +1,11 @@
+.main{
+    height: 100%; 
+    display: table;
+    padding-left: 100;
+    padding-right: 100;
+}
+
+.row{
+/*    display: table-cell;*/
+    vertical-align: middle;
+}
