@@ -9,3 +9,8 @@
 /*    display: table-cell;*/
     vertical-align: middle;
 }
+
+.hover{
+    -webkit-filter: blur(10px);
+    -webkit-transform: translate3d(0, 0, 0);
+  }
