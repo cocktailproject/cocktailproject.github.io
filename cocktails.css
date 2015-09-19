@@ -31,13 +31,16 @@ img{
 
 
 .center-block {
-    display:block;
+    
+    
+    vertical-align: middle;
+    display: block;
     text-align:center; 
     background-color: white;
     padding: 10px;
     border: 3px solid;
     border-color: #D1D3D4;
-    margin: 100px;
+    margin: 95px;
     position: absolute;
     left: 0px;
     top: 0px;
