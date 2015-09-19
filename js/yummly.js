@@ -4,16 +4,17 @@ $( document ).ready(function() {
     //add hover states
     $( ".col-md-3" ).hover(
   function() {
-    $(this).addClass( "hover" );
+    $(this).find("img").addClass( "hover" );
+    $(this).find(".center-block").css("visibility", "visible");
   }, function() {
-    $(this).removeClass( "hover" );
+    $(this).find("img").removeClass( "hover" );
+    $(this).find(".center-block").css("visibility", "hidden");
   }
 );
     
     var a = getSearchResults("cosmopolitan");
     console.log(a);
 });
-
 function getSearchResults(keyword){
     //fetch search results from Yummly
     var searchResults = []; //should be a list of objects whose courses match
