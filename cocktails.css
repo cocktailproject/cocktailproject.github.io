@@ -11,6 +11,12 @@
     vertical-align: middle;
     margin-left: 0;
     margin-right: 0;
+    border-style: none;
+    border: 0;
+}
+
+.thumbnail{
+    border: 0;
 }
 
 img{
@@ -19,15 +25,21 @@ img{
     display: block;
     margin-left: auto;
     margin-right: auto;
+    
 }
-
 
 .hover{
     -webkit-filter: blur(10px);
-    -webkit-transform: translate3d(0, 0, 0);
+    -webkit-transform: translated(0, 0, 0);
   }
   
-  
+#testModal{
+    text-transform: uppercase;
+}  
+
+.modal-title{
+    text-transform: uppercase;
+}
 
 
 .center-block {
@@ -40,10 +52,7 @@ img{
     padding: 10px;
     border: 3px solid;
     border-color: #D1D3D4;
-    margin: 95px;
-    position: absolute;
-    left: 0px;
-    top: 0px;
+    position: relative;
     visibility: hidden;
 }
 
