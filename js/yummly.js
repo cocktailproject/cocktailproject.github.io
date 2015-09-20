@@ -16,6 +16,10 @@ function getIngredients(){
 }
 
 $( document ).ready(function() {
+     setTimeout(function(){
+        $('body').addClass('loaded');
+//        $('h1').css('color','#222222');
+    }, 4000);
     //add hover states
     $( ".col-md-3" ).hover(
   function() {
@@ -51,7 +55,6 @@ $( document ).ready(function() {
 		$(newHtml).appendTo('.modal-body');
 
 		$('#myModal').modal({show:true});
-//        $(".grid").css("position","fixed");
         
 		currentIndex = 0,
 		items = $('#testModal div'),
@@ -59,14 +62,9 @@ $( document ).ready(function() {
     });
     
 	$('.close').click(function(){
-        $('.modal-dialog').scrollTop(0);
+//        $('.modal-dialog').scrollTop(0);
 		$(".grid").css("position","relative");
-	});
-	
-	$('#close-btn-bottom').click(function(){
-        $('.modal-dialog').scrollTop(0);
-		$(".grid").css("position","relative");
-	});
+	});	
 
     });
     
@@ -105,17 +103,9 @@ function getSearchResults(keyword,title){
 function addToLibrary(searchResults){
     sortResults(searchResults, function(bestMatch){
         var id = bestMatch.id;
-        //get the ingredient lines for the best one
-//        var name = i.title;
-//        library[name] = i;
-        //add ingredient field to bestMatch, an object,
-        //then add to library
         $.ajax({
             url: "https://api.yummly.com/v1/api/recipe/"+id+"?_app_id=07f4518d&_app_key=e01c2ebffc266def77849ec9d8417da8",
             type: "GET",
-//    data: {
-//        q:keyword,
-//    },
             dataType: "json",
             success: function(json){
                 var ingLines = json.ingredientLines;
@@ -141,5 +131,12 @@ function sortResults(searchResuts,fn){
 
 //find ingredients in library and return lines of ingredients
 function getCaption(id){
-    return library[id].ingr;
+    var ingr = library[id].ingr;
+    var str = "<table>";
+    for (i = 0; i<ingr.length;i++){
+        var now = "<tr style='border-bottom: 1px dotted silver;'><td>"+ingr[i]+"</td>";
+        str += now;
+    }
+    str+= "</table>"
+    return str;
 }
