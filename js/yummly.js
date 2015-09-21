@@ -11,15 +11,21 @@ function findAllAs(){
     });
 }
 
-function getIngredients(){
-    
-}
+
+$(window).load(function() {
+    $("#loader").delay(4000).animate({
+        opacity:0
+    }, 1000);
+});
 
 $( document ).ready(function() {
-     setTimeout(function(){
-        $('body').addClass('loaded');
-//        $('h1').css('color','#222222');
-    }, 4000);
+    $("body").css("overflow","hidden");
+    
+    setTimeout(function(){
+        $("body").css("overflow","visible");
+        $("#loader").remove();
+    },5000);
+    
     //add hover states
     $( ".col-md-3" ).hover(
   function() {
@@ -36,9 +42,6 @@ $( document ).ready(function() {
     // 3) find best search result, put that id into array
     window.setTimeout(getAllIds,5000,arrNames);
     // 4) loop through array of id's, do api call on each, add ingredient line to library
-    window.setTimeout(getIngredients,10000);
-    
-//    var a = getSearchResults("cosmopolitan");
     
     $('.thumbnail').click(function(){
 		$('.modal-body').empty();
@@ -63,7 +66,7 @@ $( document ).ready(function() {
     
 	$('.close').click(function(){
 //        $('.modal-dialog').scrollTop(0);
-		$(".grid").css("position","relative");
+		$("body").css("position","relative");
 	});	
 
     });
@@ -137,6 +140,6 @@ function getCaption(id){
         var now = "<tr style='border-bottom: 1px dotted silver;'><td>"+ingr[i]+"</td>";
         str += now;
     }
-    str+= "</table>"
+    str+= "</table>";
     return str;
 }
