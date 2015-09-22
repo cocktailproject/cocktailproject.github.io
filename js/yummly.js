@@ -64,6 +64,27 @@ $( document ).ready(function() {
   		itemAmt = items.length;
     });
 
+        $('.center-block').click(function(){
+        $('.modal-body').empty();
+        var title = $(this).parent('a').attr("name");
+        var id = $(this).parent('a').attr('title');
+        $('.modal-title').html(title);
+        var newHtml = (
+            "<section class='slider-modal'>"+
+            "<div class='container-modal' id='testModal'>"+
+            "<div style='display: inline-block;'>"+
+            getCaption(id) +
+            "</div>" + "</section>"
+            );
+        $(newHtml).appendTo('.modal-body');
+
+        $('#myModal').modal({show:true});
+        
+        currentIndex = 0,
+        items = $('#testModal div'),
+        itemAmt = items.length;
+    });
+
 
     
 	$('.close').click(function(){
