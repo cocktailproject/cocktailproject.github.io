@@ -90,6 +90,10 @@ h1 {
 
 /*card*/
 
+.modal-open {
+    overflow: visible;
+}
+
 .modal-content{
     width: 60%;
     height: auto;
