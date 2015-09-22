@@ -63,13 +63,17 @@ $( document ).ready(function() {
 		items = $('#testModal div'),
   		itemAmt = items.length;
     });
+
+
     
 	$('.close').click(function(){
-//        $('.modal-dialog').scrollTop(0);
+    //    $('.modal-dialog').scrollTop(0);
 		$("body").css("position","relative");
 	});	
 
     });
+
+
     
 function getAllIds(array){
     for (i=0;i<array.length;i++){
